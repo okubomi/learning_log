@@ -1,0 +1,15 @@
+<p>pizza.html</p>
+
+<h3>{{ pizza.name }}のトッピング一覧</h3>
+
+<!-- context = {'pizza':pizza, 'toppings':toppings} -->
+
+<ul>
+  {% for topping in toppings %}
+    <li>                                   <!-- topics/1/ -->       
+        {{ topping.name }}        
+    </li>
+ {% empty %}<!--レコードが空の場合-->
+    <li>トッピングはまだ登録されていません。</li>
+ {% endfor %}
+</ul>

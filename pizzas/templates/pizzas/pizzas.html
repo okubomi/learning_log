@@ -1,0 +1,16 @@
+<p>pizzas.html</p>
+
+<h3>ピザ一覧</h3>
+<!-- context = {'pizzas':pizzas} -->
+ <ul>
+  {% for pizza in pizzas %}
+    <li> 
+      <!-- pizzas/1/ -->
+      <a href="{% url 'pizzas:pizza' pizza.id %}">                                  <!-- topics/1/ -->       
+        {{ pizza.name }} 
+      </a>       
+    </li>
+ {% empty %}<!--レコードが空の場合-->
+    <li>ピザはまだ登録されていません。</li>
+ {% endfor %}
+</ul>
